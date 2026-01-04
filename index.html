@@ -4,138 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integra Management Group BV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
-  /* --- CSS STYLING VOOR INTEGRA --- */
   :root {
-    --integra-navy: #0a1f3d;
+    /* Rijkere kleuren */
+    --integra-navy: #051429; 
+    --integra-navy-light: #0f2b52;
     --integra-gold: #c5a05e;
+    --integra-gold-shine: #e6c888;
     --integra-white: #ffffff;
   }
   
   body {
     margin: 0;
     padding: 0;
-    font-family: "Times New Roman", Garamond, serif;
-    background-color: var(--integra-white);
-    color: var(--integra-navy);
+    /* Hier koppelen we het chique lettertype */
+    font-family: 'Playfair Display', serif; 
+    background-color: var(--integra-navy);
+    color: var(--integra-white);
+    overflow-x: hidden; /* Voorkomt horizontaal scrollen */
   }
 
-  /* Header & Navigatie DESKTOP */
+  /* Header Styling */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background-color: var(--integra-navy);
+    padding: 30px 60px;
+    background: linear-gradient(to bottom, #051429, #081a36);
+    border-bottom: 1px solid rgba(197, 160, 94, 0.3); /* Subtiele gouden lijn */
   }
 
   .logo-placeholder {
     color: var(--integra-gold);
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: 2px solid var(--integra-gold);
-    padding: 10px;
-    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--integra-gold);
+    padding: 12px 20px;
+    /* Dit maakt het logo-kader chiquer */
+    box-shadow: 0 0 10px rgba(197, 160, 94, 0.2); 
   }
 
   nav a {
-    color: var(--integra-white);
+    color: #e0e0e0;
     text-decoration: none;
-    margin-left: 30px;
-    font-size: 0.9rem;
+    margin-left: 40px;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    font-family: 'Lato', sans-serif; /* Strakker font voor menu */
+    font-weight: 300;
+    transition: color 0.3s;
   }
 
-  /* Hero Sectie DESKTOP */
+  nav a:hover {
+    color: var(--integra-gold);
+  }
+
+  /* Hero Sectie Styling */
   .hero {
-    background-color: var(--integra-navy);
-    color: var(--integra-white);
-    /* Grote padding voor desktop */
-    padding: 100px 50px 150px 50px;
+    /* Een 'Vignette' effect: donkerder in de hoeken, lichter in midden */
+    background: radial-gradient(circle at center, var(--integra-navy-light) 0%, var(--integra-navy) 80%);
+    min-height: 80vh; /* Minimaal 80% van de schermhoogte */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: center; /* Alles centreren voor statige look */
+    text-align: center;
+    padding: 0 20px;
   }
 
   h1 {
     color: var(--integra-gold);
-    /* Groot font voor desktop */
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    /* Goudkleurig verloopeffect op de tekst zelf */
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    font-size: 4.5rem; /* Veel groter */
+    margin-bottom: 25px;
+    line-height: 1.1;
+    max-width: 900px;
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.5); /* Schaduw achter tekst */
   }
 
   p.lead {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    opacity: 0.9;
+    font-family: 'Lato', sans-serif; /* Leesbaarder lettertype */
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    color: #d1d1d1;
+    font-weight: 300;
   }
 
+  /* De 'Gouden' Knop */
   .btn-gold {
-    background-color: var(--integra-gold);
+    /* Metaal-achtig verloop */
+    background: linear-gradient(135deg, var(--integra-gold) 0%, var(--integra-gold-shine) 50%, var(--integra-gold) 100%);
     color: var(--integra-navy);
-    padding: 15px 35px;
+    padding: 18px 45px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 2px;
-    display: inline-block;
-    transition: background-color 0.3s;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(197, 160, 94, 0.4); /* Gouden gloed */
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #fff5;
   }
   
   .btn-gold:hover {
-    background-color: #d4b375;
+    transform: translateY(-2px); /* Komt iets omhoog */
+    box-shadow: 0 6px 20px rgba(197, 160, 94, 0.6);
   }
 
-  /* =========================================
-     NIEUW: RESPONSIVE MEDIA QUERY (MOBIEL)
-     ========================================= */
+  /* Mobiele aanpassingen */
   @media (max-width: 768px) {
-    header {
-        padding: 15px 20px; /* Minder ruimte in header */
-        flex-direction: column; /* Logo boven menu */
-    }
-    
-    .logo-placeholder {
-        margin-bottom: 15px;
-    }
-
-    nav a {
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 0.8rem;
-    }
-
-    .hero {
-        /* Minder padding op mobiel */
-        padding: 60px 20px 80px 20px;
-        text-align: center; /* Tekst centreren op mobiel */
-        align-items: center;
-    }
-
-    h1 {
-        /* Kleiner lettertype op mobiel */
-        font-size: 2.2rem;
-    }
-    
-    p.lead {
-        font-size: 1rem;
-    }
+    header { padding: 20px; flex-direction: column; }
+    nav { margin-top: 20px; }
+    nav a { margin: 0 10px; font-size: 0.8rem; }
+    h1 { font-size: 2.5rem; }
+    p.lead { font-size: 1rem; padding: 0 20px; }
   }
-
 </style>
 </head>
 <body>
 
   <header>
     <div class="logo-placeholder">
-      [LOGO: SCHILD] INTEGRA
+      INTEGRA
     </div>
     <nav>
+      <a href="#">Over Ons</a>
       <a href="#">Visie</a>
       <a href="#">Contact</a>
     </nav>
