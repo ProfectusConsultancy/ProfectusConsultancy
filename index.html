@@ -6,36 +6,42 @@
 <title>Integra Management Group BV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    /* Rijkere kleuren */
     --integra-navy: #051429; 
     --integra-navy-light: #0f2b52;
     --integra-gold: #c5a05e;
     --integra-gold-shine: #e6c888;
     --integra-white: #ffffff;
+    --integra-offwhite: #f4f4f4;
   }
   
+  html {
+    scroll-behavior: smooth; /* Zorgt voor het zachte scrollen */
+  }
+
   body {
     margin: 0;
     padding: 0;
-    /* Hier koppelen we het chique lettertype */
     font-family: 'Playfair Display', serif; 
     background-color: var(--integra-navy);
     color: var(--integra-white);
-    overflow-x: hidden; /* Voorkomt horizontaal scrollen */
+    overflow-x: hidden;
   }
 
-  /* Header Styling */
+  /* --- HEADER & NAVIGATIE --- */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 60px;
+    padding: 25px 60px;
     background: linear-gradient(to bottom, #051429, #081a36);
-    border-bottom: 1px solid rgba(197, 160, 94, 0.3); /* Subtiele gouden lijn */
+    border-bottom: 1px solid rgba(197, 160, 94, 0.3);
+    position: sticky; /* Menu blijft bovenaan plakken */
+    top: 0;
+    z-index: 1000;
   }
 
   .logo-placeholder {
@@ -45,20 +51,20 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     border: 1px solid var(--integra-gold);
-    padding: 12px 20px;
-    /* Dit maakt het logo-kader chiquer */
+    padding: 10px 20px;
     box-shadow: 0 0 10px rgba(197, 160, 94, 0.2); 
+    background: rgba(5, 20, 41, 0.9);
   }
 
   nav a {
     color: #e0e0e0;
     text-decoration: none;
-    margin-left: 40px;
-    font-size: 0.95rem;
+    margin-left: 35px;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'Lato', sans-serif; /* Strakker font voor menu */
-    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
     transition: color 0.3s;
   }
 
@@ -66,35 +72,31 @@
     color: var(--integra-gold);
   }
 
-  /* Hero Sectie Styling */
+  /* --- HERO SECTIE --- */
   .hero {
-    /* Een 'Vignette' effect: donkerder in de hoeken, lichter in midden */
     background: radial-gradient(circle at center, var(--integra-navy-light) 0%, var(--integra-navy) 80%);
-    min-height: 80vh; /* Minimaal 80% van de schermhoogte */
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Alles centreren voor statige look */
+    align-items: center;
     text-align: center;
     padding: 0 20px;
   }
 
   h1 {
     color: var(--integra-gold);
-    /* Goudkleurig verloopeffect op de tekst zelf */
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    font-size: 4.5rem; /* Veel groter */
+    font-size: 4rem; 
     margin-bottom: 25px;
     line-height: 1.1;
     max-width: 900px;
-    text-shadow: 0px 4px 10px rgba(0,0,0,0.5); /* Schaduw achter tekst */
   }
 
   p.lead {
-    font-family: 'Lato', sans-serif; /* Leesbaarder lettertype */
+    font-family: 'Lato', sans-serif;
     font-size: 1.3rem;
     max-width: 700px;
     margin-bottom: 50px;
@@ -103,9 +105,8 @@
     font-weight: 300;
   }
 
-  /* De 'Gouden' Knop */
+  /* --- ALGEMENE KNOP STIJL --- */
   .btn-gold {
-    /* Metaal-achtig verloop */
     background: linear-gradient(135deg, var(--integra-gold) 0%, var(--integra-gold-shine) 50%, var(--integra-gold) 100%);
     color: var(--integra-navy);
     padding: 18px 45px;
@@ -114,48 +115,133 @@
     font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(197, 160, 94, 0.4); /* Gouden gloed */
+    box-shadow: 0 4px 15px rgba(197, 160, 94, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #fff5;
+    border: none;
+    cursor: pointer;
   }
   
   .btn-gold:hover {
-    transform: translateY(-2px); /* Komt iets omhoog */
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(197, 160, 94, 0.6);
   }
 
-  /* Mobiele aanpassingen */
+  /* --- SECTIE: VISIE / WAARDE PROPOSITIE --- */
+  .section-content {
+    background-color: var(--integra-white);
+    color: var(--integra-navy);
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--integra-navy);
+  }
+
+  p.body-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  /* --- SECTIE: OPERATING COMPANY (PROFECTUS) --- */
+  .section-dark {
+    background-color: var(--integra-navy-light);
+    color: var(--integra-white);
+    padding: 100px 50px;
+    text-align: center;
+    border-top: 4px solid var(--integra-gold);
+  }
+
+  .section-dark h2 {
+    color: var(--integra-gold);
+  }
+  
+  .section-dark p.body-text {
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    background-color: #020a14;
+    padding: 40px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #222;
+  }
+
+  /* --- MOBIEL --- */
   @media (max-width: 768px) {
     header { padding: 20px; flex-direction: column; }
-    nav { margin-top: 20px; }
-    nav a { margin: 0 10px; font-size: 0.8rem; }
-    h1 { font-size: 2.5rem; }
-    p.lead { font-size: 1rem; padding: 0 20px; }
+    nav { margin-top: 20px; display: flex; flex-direction: column; align-items: center; }
+    nav a { margin: 10px 0; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    p.lead, p.body-text { font-size: 1rem; padding: 0 10px; }
+    .section-content, .section-dark { padding: 60px 20px; }
   }
 </style>
 </head>
 <body>
 
   <header>
-    <div class="logo-placeholder">
-      INTEGRA
-    </div>
+    <div class="logo-placeholder">INTEGRA</div>
     <nav>
-      <a href="#">Over Ons</a>
-      <a href="#">Visie</a>
-      <a href="#">Contact</a>
+      <a href="#visie">Visie</a>
+      <a href="#profectus">Werkmaatschappij</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Het Fundament voor<br>Veilige Vooruitgang.</h1>
     <p class="lead">
-      Integra Management Group biedt de strategische basis en het toezicht voor ondernemingen die opereren op het snijvlak van technologie en veiligheid.
+      Integra Management Group biedt de strategische basis en het toezicht voor ondernemingen die opereren op het snijvlak van technologie en veiligheid. Wij bewaken integriteit in een dynamische digitale wereld.
     </p>
     <div>
-      <a href="#" class="btn-gold">Ontdek onze visie</a>
+      <a href="#visie" class="btn-gold">Ontdek onze visie</a>
     </div>
   </section>
+
+  <section id="visie" class="section-content">
+    <div class="content-wrapper">
+      <h2>Stabiliteit in een veranderend landschap.</h2>
+      <p class="body-text">
+        In een tijd waarin snelheid vaak voorrang krijgt op veiligheid, staat Integra voor een compromisloze basis. Wij geloven dat duurzame groei alleen mogelijk is vanuit een integer en beschermd fundament.
+      </p>
+      <p class="body-text">
+        Als moederorganisatie zorgen wij voor de governance, financiële stabiliteit en lange-termijn strategie die onze werkmaatschappijen in staat stelt te excelleren zonder afgeleid te worden door randzaken.
+      </p>
+    </div>
+  </section>
+
+  <section id="profectus" class="section-dark">
+    <h2>Onze Uitvoerende Kracht</h2>
+    <p class="body-text">
+      De strategische visie van Integra wordt in de praktijk gebracht door onze werkmaatschappij. 
+      <strong>Profectus Consultancy</strong> is de motor voor versnelling in DevOps en Security. Zij leveren de snelheid die de markt vraagt, binnen de veilige kaders die Integra stelt.
+    </p>
+    <a href="profectus.html" class="btn-gold">Bezoek Profectus Consultancy →</a>
+  </section>
+
+  <footer id="contact">
+    <p>© 2024 Integra Management Group BV. Alle rechten voorbehouden.</p>
+    <p>KvK: [Nummer] | Privacy Statement</p>
+  </footer>
 
 </body>
 </html>
