@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integra Management Group BV</title>
+<style>
+  /* --- CSS STYLING VOOR INTEGRA --- */
+  :root {
+    --integra-navy: #0a1f3d;
+    --integra-gold: #c5a05e;
+    --integra-white: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Garamond, serif;
+    background-color: var(--integra-white);
+    color: var(--integra-navy);
+  }
+
+  /* Header & Navigatie DESKTOP */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--integra-navy);
+  }
+
+  .logo-placeholder {
+    color: var(--integra-gold);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid var(--integra-gold);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav a {
+    color: var(--integra-white);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Hero Sectie DESKTOP */
+  .hero {
+    background-color: var(--integra-navy);
+    color: var(--integra-white);
+    /* Grote padding voor desktop */
+    padding: 100px 50px 150px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: var(--integra-gold);
+    /* Groot font voor desktop */
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  p.lead {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .btn-gold {
+    background-color: var(--integra-gold);
+    color: var(--integra-navy);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-gold:hover {
+    background-color: #d4b375;
+  }
+
+  /* =========================================
+     NIEUW: RESPONSIVE MEDIA QUERY (MOBIEL)
+     ========================================= */
+  @media (max-width: 768px) {
+    header {
+        padding: 15px 20px; /* Minder ruimte in header */
+        flex-direction: column; /* Logo boven menu */
+    }
+    
+    .logo-placeholder {
+        margin-bottom: 15px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        /* Minder padding op mobiel */
+        padding: 60px 20px 80px 20px;
+        text-align: center; /* Tekst centreren op mobiel */
+        align-items: center;
+    }
+
+    h1 {
+        /* Kleiner lettertype op mobiel */
+        font-size: 2.2rem;
+    }
+    
+    p.lead {
+        font-size: 1rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-placeholder">
+      [LOGO: SCHILD] INTEGRA
+    </div>
+    <nav>
+      <a href="#">Visie</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Het Fundament voor<br>Veilige Vooruitgang.</h1>
+    <p class="lead">
+      Integra Management Group biedt de strategische basis en het toezicht voor ondernemingen die opereren op het snijvlak van technologie en veiligheid.
+    </p>
+    <div>
+      <a href="#" class="btn-gold">Ontdek onze visie</a>
+    </div>
+  </section>
+
+</body>
+</html>
