@@ -10,17 +10,16 @@
 
 <style>
   :root {
-    --integra-navy: #051429; 
-    --integra-navy-light: #0f2b52;
+    --integra-navy: #051429;       /* Diepste donkerblauw */
+    --integra-navy-medium: #0a2240; /* Iets lichter voor secties */
+    --integra-navy-light: #0f2b52; /* Nog iets lichter */
     --integra-gold: #c5a05e;
     --integra-gold-shine: #e6c888;
     --integra-white: #ffffff;
-    --integra-offwhite: #f4f4f4;
+    --integra-text-grey: #d1d1d1;  /* Zilver/Grijs voor tekst */
   }
   
-  html {
-    scroll-behavior: smooth; /* Zorgt voor het zachte scrollen */
-  }
+  html { scroll-behavior: smooth; }
 
   body {
     margin: 0;
@@ -31,17 +30,18 @@
     overflow-x: hidden;
   }
 
-  /* --- HEADER & NAVIGATIE --- */
+  /* --- HEADER --- */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 60px;
-    background: linear-gradient(to bottom, #051429, #081a36);
-    border-bottom: 1px solid rgba(197, 160, 94, 0.3);
-    position: sticky; /* Menu blijft bovenaan plakken */
+    background: rgba(5, 20, 41, 0.95); /* Bijna solid */
+    border-bottom: 1px solid rgba(197, 160, 94, 0.2);
+    position: sticky; 
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(5px);
   }
 
   .logo-placeholder {
@@ -52,12 +52,11 @@
     letter-spacing: 2px;
     border: 1px solid var(--integra-gold);
     padding: 10px 20px;
-    box-shadow: 0 0 10px rgba(197, 160, 94, 0.2); 
-    background: rgba(5, 20, 41, 0.9);
+    box-shadow: 0 0 15px rgba(197, 160, 94, 0.15); 
   }
 
   nav a {
-    color: #e0e0e0;
+    color: #a0a0a0;
     text-decoration: none;
     margin-left: 35px;
     font-size: 0.9rem;
@@ -68,13 +67,12 @@
     transition: color 0.3s;
   }
 
-  nav a:hover {
-    color: var(--integra-gold);
-  }
+  nav a:hover { color: var(--integra-gold); }
 
-  /* --- HERO SECTIE --- */
+  /* --- HERO --- */
   .hero {
-    background: radial-gradient(circle at center, var(--integra-navy-light) 0%, var(--integra-navy) 80%);
+    /* Vignette effect */
+    background: radial-gradient(circle at center, var(--integra-navy-light) 0%, var(--integra-navy) 90%);
     min-height: 85vh;
     display: flex;
     flex-direction: column;
@@ -93,6 +91,7 @@
     margin-bottom: 25px;
     line-height: 1.1;
     max-width: 900px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
 
   p.lead {
@@ -101,11 +100,11 @@
     max-width: 700px;
     margin-bottom: 50px;
     line-height: 1.8;
-    color: #d1d1d1;
+    color: var(--integra-text-grey);
     font-weight: 300;
   }
 
-  /* --- ALGEMENE KNOP STIJL --- */
+  /* --- KNOP --- */
   .btn-gold {
     background: linear-gradient(135deg, var(--integra-gold) 0%, var(--integra-gold-shine) 50%, var(--integra-gold) 100%);
     color: var(--integra-navy);
@@ -115,24 +114,27 @@
     font-family: 'Lato', sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(197, 160, 94, 0.4);
+    box-shadow: 0 4px 15px rgba(197, 160, 94, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
     border: none;
-    cursor: pointer;
   }
   
   .btn-gold:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(197, 160, 94, 0.6);
+    box-shadow: 0 6px 25px rgba(197, 160, 94, 0.5);
   }
 
-  /* --- SECTIE: VISIE / WAARDE PROPOSITIE --- */
+  /* --- NIEUWE STIJL: VISIE SECTIE (SUBTIEL DONKER) --- */
   .section-content {
-    background-color: var(--integra-white);
-    color: var(--integra-navy);
-    padding: 100px 50px;
+    /* Geen hard wit meer, maar subtiel donkerblauw */
+    background-color: var(--integra-navy-medium); 
+    color: var(--integra-text-grey);
+    padding: 120px 50px;
     display: flex;
     justify-content: center;
+    /* Subtiele lijntjes voor chique afwerking */
+    border-top: 1px solid rgba(197, 160, 94, 0.1);
+    border-bottom: 1px solid rgba(197, 160, 94, 0.1);
   }
 
   .content-wrapper {
@@ -140,48 +142,53 @@
     text-align: center;
   }
 
-  h2 {
+  /* De kop in de visie sectie is nu goud ipv donkerblauw */
+  .section-content h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: var(--integra-navy);
+    color: var(--integra-gold); 
   }
 
-  p.body-text {
+  /* De tekst is nu zilvergrijs ipv donker */
+  .section-content p.body-text {
     font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 20px;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #c0c0c0; /* Iets lichter grijs voor leesbaarheid */
+    margin-bottom: 25px;
   }
 
-  /* --- SECTIE: OPERATING COMPANY (PROFECTUS) --- */
+  /* --- SECTIE: PROFECTUS (Nog iets donkerder contrast) --- */
   .section-dark {
-    background-color: var(--integra-navy-light);
+    /* Terug naar de diepste kleur voor contrast */
+    background-color: var(--integra-navy); 
     color: var(--integra-white);
-    padding: 100px 50px;
+    padding: 120px 50px;
     text-align: center;
-    border-top: 4px solid var(--integra-gold);
+    /* Geen harde gouden border meer nodig, de kleurverandering is genoeg */
   }
 
-  .section-dark h2 {
-    color: var(--integra-gold);
-  }
+  .section-dark h2 { color: var(--integra-gold); font-size: 2.5rem; margin-bottom: 20px;}
   
   .section-dark p.body-text {
-    color: #e0e0e0;
+    color: #a0a0a0;
     max-width: 700px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 50px auto;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.8;
   }
 
   /* --- FOOTER --- */
   footer {
-    background-color: #020a14;
-    padding: 40px;
+    background-color: #020a14; /* Bijna zwart */
+    padding: 60px 40px;
     text-align: center;
     font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
-    color: #666;
-    border-top: 1px solid #222;
+    font-size: 0.85rem;
+    color: #555;
+    border-top: 1px solid #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   /* --- MOBIEL --- */
@@ -191,7 +198,6 @@
     nav a { margin: 10px 0; }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
-    p.lead, p.body-text { font-size: 1rem; padding: 0 10px; }
     .section-content, .section-dark { padding: 60px 20px; }
   }
 </style>
@@ -240,7 +246,7 @@
 
   <footer id="contact">
     <p>© 2024 Integra Management Group BV. Alle rechten voorbehouden.</p>
-    <p>KvK: [Nummer] | Privacy Statement</p>
+    <p style="margin-top:10px;">KvK: [Nummer] | Privacy Statement</p>
   </footer>
 
 </body>
